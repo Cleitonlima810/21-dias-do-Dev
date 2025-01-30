@@ -1,21 +1,26 @@
 //Declaração de variaveis
-let fome = ""
-let dinheiro = ""
-let statusrestaurante = ""
+let nome = ""
+let idade = 0
+let carteira = ""
+let possuicarro = ""
 
 //Solicitando informaçao ao usuario e atribuindo os valores as variaveis
-fome = prompt("Você está com fome? Digite 'sim' ou 'não': ");
-dinheiro = prompt("Você tem dinheiro? Digite 'sim' ou 'não': ");
-statusrestaurante = prompt("O restaurante está aberto ou fechado? Digite 'aberto' ou 'fechado': ");
+nome = prompt("Qual seu nome?");
+idade = parseInt(prompt("Qual sua idade?"));
+carteira = prompt("Você tem carteira? Responda com 'sim' ou 'não': ");
+possuicarro = prompt("Você tem carro? Responda com 'sim' ou 'não': ");
 
-statusrestaurante = statusrestaurante.toLowerCase();
+carteira = carteira.toLowerCase();
+possuicarro = possuicarro.toLowerCase();
 
 // Validando resposta
 
-if (fome === 'sim' && dinheiro === 'sim' && statusrestaurante === 'aberto') {
-    console.log("O restaurante está aberto! Bem vindo e boa janta!"  );
-} else if (statusrestaurante === 'fechado') {
-    console.log("O restaurante está fechado! A janta vai ser em casa! ");
-} else {
-    console.log("Melhor ir para casa e prepara algo, pois preciso economizar" );
+if (idade < 18 ) {
+    console.log(nome + ", você não pode dirigir" );
+} else if (idade >= 18 && carteira === 'sim' && possuicarro === 'não') {
+    console.log(nome + ", você pode dirigir mas não tem um carro");
+} else if (idade >= 18 && carteira === 'sim' && possuicarro === 'sim') {   
+    console.log(nome + ", você será o motorista" );
+} else {   
+    console.log(nome + ", você não pode dirigir ou não forneceu informações válidas." );
 }
